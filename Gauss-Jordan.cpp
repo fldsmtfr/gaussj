@@ -21,13 +21,22 @@ int main() {
   printf("\nIngrese el tamano de la matriz: ");
   scanf("%d", &n);
   float a[n][n+1], b, x[n];
+  
   printf("\nIngrese las entradas de la matriz aumentada (por filas):\n");
   for (i = 1; i <= n; i++) {
     for (j = 1; j <= (n + 1); j++) {
-      cout << "A[" << i << ", " << j << " ]=";
+      cout << "a" << i << ", " << j << " =";
       cin >> a[i][j];
     }
   }
+  
+  for(i=1;i<=n;i++){
+  	if(a[i][j]==0){
+  		cout<<"El determinante es cero, el sistema no tiene solucion";
+  		break;
+	  }
+  }
+  
   // aplicacion del metodo de Gauss Jordan
   for (j = 1; j <= n; j++) {
     for (i = 1; i <= n; i++) {
@@ -39,6 +48,7 @@ int main() {
       }
     }
   }
+
   cout << "\nLa solucion es:\n";
   for (i = 1; i <= n; i++) {
     x[i] = a[i][n + 1] / a[i][i];
