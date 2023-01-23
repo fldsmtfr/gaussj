@@ -18,7 +18,7 @@
 using namespace std;
 int main() {
   int i, j, k, n;
-  printf("\nIngrese el tamanio de la matriz: ");
+  printf("\nIngrese el tamano de la matriz: ");
   scanf("%d", &n);
   float a[n][n+1], b, x[n];
   printf("\nIngrese las entradas de la matriz aumentada (por filas):\n");
@@ -28,7 +28,7 @@ int main() {
       cin >> a[i][j];
     }
   }
-  // aplicación del método de Gauss Jordan
+  // aplicacion del metodo de Gauss Jordan
   for (j = 1; j <= n; j++) {
     for (i = 1; i <= n; i++) {
       if (i != j) {
@@ -39,11 +39,13 @@ int main() {
       }
     }
   }
-  cout << "\nLa solución es:\n";
+  cout << "\nLa solucion es:\n";
   for (i = 1; i <= n; i++) {
     x[i] = a[i][n + 1] / a[i][i];
     cout << "x" << i << "=" << x[i] << " ";
+
   }
+  
   return (0);
 }
 
